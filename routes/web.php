@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EleveController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('bienvenu');
 });
 
 Route::middleware([
@@ -15,3 +16,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::resource('eleves', EleveController::class);
